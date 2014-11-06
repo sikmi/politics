@@ -1,4 +1,4 @@
-module ApplicationHelper::TitleHelper
+module ApplicationHelper::HeaderHelper
 
   # titleのgetter
   # 
@@ -16,6 +16,11 @@ module ApplicationHelper::TitleHelper
     else
       "#{t("#{path}.title")} | #{t("application.title")} "
     end
+  end
+
+  def description
+    path = "views.#{controller_path.gsub("/",".")}.#{action_name}.description"
+    I18n.exists?(path) ? t(path) : ""
   end
 
 

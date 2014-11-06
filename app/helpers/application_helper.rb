@@ -1,6 +1,6 @@
 module ApplicationHelper
 
-  include ApplicationHelper::TitleHelper
+  include ApplicationHelper::HeaderHelper
 
   # layoutの親
   def parent_layout(layout)
