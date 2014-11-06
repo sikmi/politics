@@ -3,11 +3,18 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  before_action :set_title
+  #rescue_from Exception,                      with: :render500
+  rescue_from ActionController::RoutingError, with: :render404
+  rescue_from ActiveRecord::RecordNotFound,   with: :render404
+  rescue_from ActiveRecord::RecordNotUnique,  with: :render422
 
-  def set_title
-    @main_title = t("application.main_title")
-    @sub_title  = t("view.#{controller_path.gsub("/",".")}.#{action_name}")
+  def render404
+  end
+
+  def render422
+  end
+
+  def render500
   end
 
 end
