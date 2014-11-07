@@ -1,0 +1,20 @@
+@import "config/color"
+@import "compass/css3/border-radius"
+
+.btn
+  background-color: $color_red
+  color: $color_white
+  display: inline-block
+  padding: 1em 2em
+  cursor: pointer
+  transition: background-color 0.2s, transform 0.2s
+  +border-radius(30px)
+
+  &:hover
+    background-color: darken($color_red,10%)
+    transform: translateY(-2px)
+  &:active
+    background-color: darken($color_red,15%)
+    transition: transform 0.1s
+    transform: translateY(3px)
+
