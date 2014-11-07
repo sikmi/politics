@@ -6,4 +6,10 @@ Rails.application.routes.draw do
     resources :contacts, only: [:new,:show]
   end
 
+  if Rails.env.development?
+    scope "dev", module: "dev", as: :dev do
+      resources :designs, only: [:index]
+    end
+  end
+
 end

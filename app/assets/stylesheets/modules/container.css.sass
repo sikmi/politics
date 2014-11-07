@@ -6,6 +6,9 @@
   a
     color: $color_font
 
+@mixin container-reverse($color)
+  +container(lighten($color,50%),$color)
+
 .container
   padding: 40px
 
@@ -17,3 +20,19 @@
     +container($color_green)
   &.is-yellow
     +container($color_yellow)
+  &.is-blue
+    +container($color_blue)
+  &.is-indigo
+    +container($color_indigo)
+  &.is-red-reverse
+    +container-reverse($color_red)
+  &.is-purple-reverse
+    +container-reverse($color_purple)
+  &.is-green-reverse
+    +container-reverse($color_green)
+  &.is-yellow-reverse
+    +container-reverse($color_yellow)
+  &.is-blue-reverse
+    +container-reverse($color_blue)
+  &.is-indigo-reverse
+    +container-reverse($color_indigo)
