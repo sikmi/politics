@@ -1,4 +1,6 @@
 /*
+ * https://github.com/bokmann/font-awesome-rails
+ *= require font-awesome
  *= require_tree ./bases
  *= require_tree ./layouts
  *= require_tree ./modules

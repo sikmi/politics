@@ -1,6 +1,14 @@
 @import "config/color"
 @import "compass/css3/border-radius"
 
+@mixin btn($color_bg, $color_font: $color_white)
+  background-color: $color_bg !important
+  color: $color_font !important
+  &:hover
+    background-color: darken($color_bg,10%) !important
+  &:active
+    background-color: darken($color_bg,15%) !important
+
 .btn
   background-color: $color_red
   color: $color_white
@@ -18,3 +26,5 @@
     transition: transform 0.1s
     transform: translateY(3px)
 
+  &.is-red-reverse
+    +btn($color_white,$color_red)
