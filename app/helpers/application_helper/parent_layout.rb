@@ -1,4 +1,4 @@
-module ApplicationHelper::ParentLayoutHelper
+module ApplicationHelper::ParentLayout
 
   # layoutの親
   def parent_layout(layout)

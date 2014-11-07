@@ -1,4 +1,4 @@
-module ApplicationHelper::DesignHelper
+module ApplicationHelper::Design
 
   def artwork title,&block
     [

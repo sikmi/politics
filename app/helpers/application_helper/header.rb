@@ -1,4 +1,4 @@
-module ApplicationHelper::HeaderHelper
+module ApplicationHelper::Header
 
   # titleのgetter
   # 

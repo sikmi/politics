@@ -1,4 +1,4 @@
-module ApplicationHelper::LinkHelper
+module ApplicationHelper::Link
 
   # = link_i18n
   #

@@ -1,11 +1,11 @@
 module ApplicationHelper
 
-  include ApplicationHelper::ParentLayoutHelper
-  include ApplicationHelper::HeaderHelper
-  include ApplicationHelper::LinkHelper
+  include ApplicationHelper::ParentLayout
+  include ApplicationHelper::Header
+  include ApplicationHelper::Link
 
   if Rails.env.development?
-    include ApplicationHelper::DesignHelper
+    include ApplicationHelper::Design
   end
 
 end
