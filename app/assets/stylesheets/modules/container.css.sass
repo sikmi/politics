@@ -1,0 +1,19 @@
+@import "config/color"
+
+@mixin container($color_bg,$color_font: $color_white)
+  background-color: $color_bg
+  color: $color_font
+  a
+    color: $color_font
+
+.container
+  padding: 40px
+
+  &.is-red
+    +container($color_red)
+  &.is-purple
+    +container($color_purple)
+  &.is-green
+    +container($color_green)
+  &.is-yellow
+    +container($color_yellow)

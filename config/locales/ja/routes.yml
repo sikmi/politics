@@ -1,0 +1,5 @@
+ja:
+  routes:
+    root: "トップ"
+    new_lp_contact: お問い合わせ
+    lp_contact:     お問い合わせ完了
