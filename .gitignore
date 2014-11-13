@@ -19,3 +19,5 @@
 *.orig
 *.swp
 *.iml
+
+/config/database.yml
