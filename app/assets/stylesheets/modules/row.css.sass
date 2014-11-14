@@ -1,0 +1,8 @@
+@import "config/grid"
+
+// 通常の場合
+@for $i from 1 through $total_columns
+  .row#{$i}
+    padding-top: $gutter_width * $i
+    padding-bottom: $gutter_width * $i
+    +clearfix

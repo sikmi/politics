@@ -1,0 +1,28 @@
+@import "config/grid"
+
+.grid
+  +container
+  +clearfix
+
+// 通常の場合
+@for $i from 1 through $total_columns
+  .col#{$i}
+    +column($i)
+@for $i from 0 through $total_columns - 1
+  .push#{$i}
+    +push($i)
+
+// スマホ縦: 320px - 479px
+// スマホ横、タブレット: 480px - 767px
+// タブレット: 768px - 1023px
+// PC: 1024px -
+
+// スマホの場合 768px以下にする
+@media (max-width: 768px)
+  @for $i from 1 through $total_columns
+    .col#{$i}
+      +column(12)
+  @for $i from 0 through $total_columns - 1
+    .push#{$i}
+      clear: both
+      +push(0)

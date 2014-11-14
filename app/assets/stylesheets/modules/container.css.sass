@@ -1,47 +1,33 @@
 @import "config/color"
 @import "compass/utilities/general/clearfix"
-@import "config/grid"
+//@import "config/grid"
 
-@mixin container($color_bg,$color_font: $color_white)
+@mixin container-color($color_bg,$color_font: $color_white)
   background-color: $color_bg
   color: $color_font
   a
     color: $color_font
 
 @mixin container-reverse($color)
-  +container(lighten($color,50%),$color)
+  +container-color(lighten($color,50%),$color)
 
 .container
   +clearfix
-  padding: 40px
-  #left
-    @include column(5)
-  #right
-    @include column(7)
-    @include push(5)
-  #one-third
-    @include column(4)
-  #two-thirds
-    @include column(4)
-    @include push(4)
-  #three-thirds
-    @include column(4)
-    @include push(8)  
 
   &.is-red
-    +container($color_red)
+    +container-color($color_red)
   &.is-purple
-    +container($color_purple)
+    +container-color($color_purple)
   &.is-green
-    +container($color_green)
+    +container-color($color_green)
   &.is-yellow
-    +container($color_yellow)
+    +container-color($color_yellow)
   &.is-blue
-    +container($color_blue)
+    +container-color($color_blue)
   &.is-indigo
-    +container($color_indigo)
+    +container-color($color_indigo)
   &.is-black
-    +container($color_black)
+    +container-color($color_black)
   &.is-red-reverse
     +container-reverse($color_red)
   &.is-purple-reverse
@@ -55,7 +41,7 @@
   &.is-indigo-reverse
     +container-reverse($color_indigo)
   &.is-black-reverse
-    +container($color_white,$color_black)
+    +container-color($color_white,$color_black)
 
   &.is-large
     padding-top: 100px
@@ -63,6 +49,6 @@
 
   &.is-center
     text-align: center
-    
+
   &.is-no-padding
     padding-bottom: 0px

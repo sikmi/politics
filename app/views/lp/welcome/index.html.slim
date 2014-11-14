@@ -2,61 +2,65 @@
 
 .container.is-red.is-large.is-center
   .title.is-center.is-large 警告
-  .description.is-center.is-narrow
-    | 自分のホームページを持っていない候補者の皆様、見た目の悪いホームページを使っている立候補予定の皆様は、すでに他の候補者から遅れをとっています。
-  a.btn.is-center.is-red-reverse(href=new_lp_contact_path) どうする？
+  .grid
+    .col8.push2.is-center.is-narrow
+      | 自分のホームページを持っていない候補者の皆様、
+      br
+      | 見た目の悪いホームページを使っている立候補予定の皆様は、すでに他の候補者から遅れをとっています。
+  .grid.row6
+    a.btn.is-center.is-red-reverse(href=new_lp_contact_path) どうする？
 
 .container.is-purple-reverse.is-large
-  #left
-    img src="http://placehold.it/500x700"
-  #right
-    .title.is-center.is-large.down 選挙期間は365日
-    .description
-     | あなたが自身のポリシーを有権者に伝えるために最も有効な手段としては何が考えられますか？
-     br
-     | 「今も昔も有権者の皆様に自分のポリシーを訴えるのは、演説で実際に有権者の顔を見ながら行うことが一番」　とお考えでしょうか。
-     | 弊社も演説が最も効果的な方法であると考えております。
-     br
-     | しかしながら、演説を行える回数は限られており、また演説の聴衆も基本的には皆様に興味を覚えた有権者が中心となりがちです。
-     br
-     | そのため、忙しい有権者であっても、皆様の政策をいつでも確認できる場所を提供することで
-       Web上において皆様のポリシーを公表することが望ましいと思います
+  .grid
+    .col6
+      img src="http://placehold.it/768x700"
+    .col6.push6
+      .title.is-center.is-large.down 選挙期間は365日
+      .description
+       | あなたが自身のポリシーを有権者に伝えるために最も有効な手段としては何が考えられますか？
+       br
+       | 「今も昔も有権者の皆様に自分のポリシーを訴えるのは、演説で実際に有権者の顔を見ながら行うことが一番」　とお考えでしょうか。
+       | 弊社も演説が最も効果的な方法であると考えております。
+       br
+       | しかしながら、演説を行える回数は限られており、また演説の聴衆も基本的には皆様に興味を覚えた有権者が中心となりがちです。
+       br
+       | そのため、忙しい有権者であっても、皆様の政策をいつでも確認できる場所を提供することで
+         Web上において皆様のポリシーを公表することが望ましいと思います
 
 .container.is-green-reverse.is-large.is-no-padding
   .title.is-center 政治発進 の3つのポイント
-  #wrapper
   input type="radio" name="switch" id="tab-1"
   input type="radio" name="switch" id="tab-2"
   input type="radio" name="switch" id="tab-3"
-  ul.tabBtn(style="list-style:none;")
-    li
-      #one-third
-        .ih-item.circle.colored.effect6.scale_up
-          a(herf="javascript.void(0)")
-            label for="tab-1"
-              .img 
-                img src="http://placehold.it/300x150"
-              .info
-                h3 |みんなに知ってもらう
-                p |オフィシャルサイトでアピール
-      #two-thirds
-        .ih-item.circle.colored.effect6.scale_up
-          a(herf="javascript.void(0)")
-            label for="tab-2"
-              .img 
-                img src="http://placehold.it/300x150"
-              .info
-                h3 |facebook
-                p |facebookと連動
-      #three-thirds
-        .ih-item.circle.colored.effect6.scale_up
-          a(herf="javascript.void(0)")
-            label for="tab-3"
-              .img 
-                img src="http://placehold.it/300x150"
-              .info
-                h3 |効果を可視化
-                p |簡単な文
+  //ul.tabBtn(style="list-style:none;")
+  .grid.row2
+    .col4
+      .ih-item.circle.colored.effect6.scale_up
+        a(herf="javascript.void(0)")
+          label for="tab-1"
+            .img
+              img src="http://placehold.it/300x150"
+            .info
+              h3 |みんなに知ってもらう
+              p |オフィシャルサイトでアピール
+    .col4.push4
+      .ih-item.circle.colored.effect6.scale_up
+        a(herf="javascript.void(0)")
+          label for="tab-2"
+            .img 
+              img src="http://placehold.it/300x150"
+            .info
+              h3 |facebook
+              p |facebookと連動
+    .col4.push8
+      .ih-item.circle.colored.effect6.scale_up
+        a(herf="javascript.void(0)")
+          label for="tab-3"
+            .img 
+              img src="http://placehold.it/300x150"
+            .info
+              h3 |効果を可視化
+              p |簡単な文
   .tabContents
     .section
       .container.is-green.is-large
@@ -69,9 +73,9 @@
         .title　効果の見える化
   
 .container.is-yellow.is-large
-  #left
+  .col4
     img src="http://placehold.it/300x400"
-  #right
+  .col6.push4
     .title 初期費用0円
     .title 月額たったの1万円
 
