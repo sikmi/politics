@@ -1,4 +1,6 @@
 @import "config/color"
+@import "compass/utilities/general/clearfix"
+@import "config/grid"
 
 @mixin container($color_bg,$color_font: $color_white)
   background-color: $color_bg
@@ -10,7 +12,21 @@
   +container(lighten($color,50%),$color)
 
 .container
+  +clearfix
   padding: 40px
+  #left
+    @include column(5)
+  #right
+    @include column(7)
+    @include push(5)
+  #one-third
+    @include column(4)
+  #two-thirds
+    @include column(4)
+    @include push(4)
+  #three-thirds
+    @include column(4)
+    @include push(8)  
 
   &.is-red
     +container($color_red)
@@ -47,3 +63,6 @@
 
   &.is-center
     text-align: center
+    
+  &.is-no-padding
+    padding-bottom: 0px
