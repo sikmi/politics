@@ -1,4 +1,3 @@
-
 /h1=title
 
 .container.is-red.is-large.is-center
@@ -23,28 +22,41 @@
      | そのため、忙しい有権者であっても、皆様の政策をいつでも確認できる場所を提供することで
        Web上において皆様のポリシーを公表することが望ましいと思います
 
-
 .container.is-green-reverse.is-large.is-no-padding
   .title.is-center 政治発進 の3つのポイント
   #wrapper
   input type="radio" name="switch" id="tab-1"
   input type="radio" name="switch" id="tab-2"
   input type="radio" name="switch" id="tab-3"
-  ul.tabBtn
+  ul.tabBtn(style="list-style:none;")
     li
       #one-third
-        label for="tab-1" 
-          img src="http://placehold.it/300x150"
-        .description
-          |みんなに知ってもらう
-        .description.is-narrow
-          |オフィシャルサイトでアピール
+        .ih-item.circle.colored.effect6.scale_up
+          a(herf="javascript.void(0)")
+            label for="tab-1"
+              .img 
+                img src="http://placehold.it/300x150"
+              .info
+                h3 |みんなに知ってもらう
+                p |オフィシャルサイトでアピール
       #two-thirds
-        label for="tab-2" 
-          img src="http://placehold.it/300x150"
+        .ih-item.circle.colored.effect6.scale_up
+          a(herf="javascript.void(0)")
+            label for="tab-2"
+              .img 
+                img src="http://placehold.it/300x150"
+              .info
+                h3 |facebook
+                p |facebookと連動
       #three-thirds
-        label for="tab-3" 
-          img src="http://placehold.it/300x150"
+        .ih-item.circle.colored.effect6.scale_up
+          a(herf="javascript.void(0)")
+            label for="tab-3"
+              .img 
+                img src="http://placehold.it/300x150"
+              .info
+                h3 |効果を可視化
+                p |簡単な文
   .tabContents
     .section
       .container.is-green.is-large
