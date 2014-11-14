@@ -17,7 +17,7 @@
   cursor: pointer
   transition: background-color 0.2s, transform 0.2s
   +border-radius(30px)
- 
+
   &:hover
     background-color: darken($color_red,10%)
     transform: translateY(-2px)
@@ -26,9 +26,25 @@
     transition: transform 0.1s
     transform: translateY(3px)
 
+  &.is-red
+    +btn($color_red,$color_white)
   &.is-red-reverse
     +btn($color_white,$color_red)
   &.is-indigo
     +btn($color_indigo,$color_white)
   &.is-indigo-reverse
     +btn($color_white,$color_indigo)
+
+  &.is-large
+    font-size: 150%
+    +border-radius(45px)
+
+  &+.is-btn-shown
+    transition: height 1.0s, margin 1.0s
+    height: 0px
+    padding: 0 !important
+
+  &:hover
+    &+.is-btn-shown
+      height: 500px
+      margin-top: -500px
