@@ -10,6 +10,26 @@
 @mixin container-reverse($color)
   +container-color(lighten($color,50%),$color)
 
+@mixin has-arrow($left)
+  position: relative
+  overflow: visible
+
+  &:after
+    bottom: 100%
+    border: solid transparent
+    content: " "
+    height: 0
+    width: 0
+    position: absolute
+    pointer-events: none
+    border-color: rgba(225, 225, 225, 0)
+    border-bottom-color: $color_green
+    border-width: 20px
+    margin-left: -20px
+    left: $left
+
+  
+
 .container
   transition: all 400ms linear
   +clearfix
@@ -53,16 +73,11 @@
   &.is-no-padding
     padding-bottom: 0px
 
-  &.has-top-arrow:after
-    bottom: 100%;
-    left: 50%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-    border-color: rgba(225, 225, 225, 0);
-    border-bottom-color: $color_green;
-    border-width: 20px;
-    margin-left: -20px;
+  &.has-top-lft-arrow
+    +has-arrow(16.7%)
+
+  &.has-top-ce-arrow
+    +has-arrow(50%)
+
+  &.has-top-rgt-arrow
+    +has-arrow(83.3%)
