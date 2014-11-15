@@ -1,9 +1,10 @@
 .body=yield
-.foot.container.is-black
-  ul.col4.push7
-    li=link_i18n :new_lp_contact
-    li=link_to   "運営会社", "#"
-    li=link_to   "プライバシーポリシー", "#"
-  .copyright
-    | &copy; 2014 sikmi, inc All Rights Reserved.
+.footer.container.is-black
+  .grid.row1
+    ul.row1
+      li=link_i18n :new_lp_contact
+      li=link_to   "運営会社", "#"
+      li=link_to   "プライバシーポリシー", "#"
+    .copyright
+      | &copy; 2014 sikmi, inc All Rights Reserved.
 - parent_layout "layouts/application"
