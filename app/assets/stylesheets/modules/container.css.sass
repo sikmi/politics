@@ -52,3 +52,17 @@
 
   &.is-no-padding
     padding-bottom: 0px
+
+  &.has-top-arrow:after
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(225, 225, 225, 0);
+    border-bottom-color: $color_green;
+    border-width: 20px;
+    margin-left: -20px;
