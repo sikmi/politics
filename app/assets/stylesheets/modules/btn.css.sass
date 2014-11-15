@@ -1,4 +1,5 @@
 @import "config/color"
+@import "config/responsive"
 @import "compass/css3/border-radius"
 
 @mixin btn($color_bg, $color_font: $color_white)
@@ -51,3 +52,8 @@
     &+.is-btn-shown
       height: 500px
       margin-top: -500px
+
+@media (max-width: $width_sp)
+  .btn
+    &.is-huge
+      font-size: 150%

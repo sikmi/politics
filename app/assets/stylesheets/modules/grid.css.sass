@@ -1,4 +1,5 @@
 @import "config/grid"
+@import "config/responsive"
 
 .grid
   +container
@@ -18,7 +19,7 @@
 // PC: 1024px -
 
 // スマホの場合 768px以下にする
-@media (max-width: 768px)
+@media (max-width: $width_sp)
   @for $i from 1 through $total_columns
     .col#{$i}
       +column(12)

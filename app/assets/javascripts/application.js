@@ -12,5 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require lodash
+//= require angular
+//= require _headroom.jquery
 //= require turbolinks
 //= require_tree .
