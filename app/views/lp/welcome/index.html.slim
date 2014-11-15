@@ -1,8 +1,14 @@
 - content_for :js do
   coffee:
     $ ->
+      $headroom_el = $(".headroom-offset")
+      $tab_el = $(".tab-contents")
+
       $(".header:first").headroom
-        offset: $(".headroom-offset").offset().top
+        offset: $headroom_el.offset().top
+
+      $("input[name='switch']").change ->
+        $('body, html').animate({ scrollTop: $tab_el.offset().top - 160 }, 500)
 
       $(".to-top").click ->
         $('body, html').animate({ scrollTop: 0 }, 500)
@@ -94,9 +100,13 @@
               h3  オフィシャルサイトを活用
               p  クリックで表示
       .description.is-large.is-center
-        | みんなに知ってもらう
+        a(herf="javascript.void(0)")
+          label for="tab-1"
+            | みんなに知ってもらう
       .description.is-center.no-padding
-        | オフィシャルサイトでアピール
+        a(herf="javascript.void(0)")
+          label for="tab-1"
+            | オフィシャルサイトでアピール
 
     .col4.push4
       .ih-item.circle.colored.effect6.scale_up.is-center
@@ -108,9 +118,13 @@
               h3  facebookを活用
               p  クリックで表示
       .description.is-large.is-center
-        | 支援者を増やす
+        a(herf="javascript.void(0)")
+          label for="tab-2"
+            | 支援者を増やす
       .description.is-center.no-padding
-        | facebookでコミュニケーション
+        a(herf="javascript.void(0)")
+          label for="tab-2"
+            | facebookでコミュニケーション
     .col4.push8
       .ih-item.circle.colored.effect6.scale_up.is-center
         a(herf="javascript.void(0)")
@@ -121,9 +135,13 @@
               h3  ●●●を活用
               p  クリックで表示
       .description.is-large.is-center
-        | 効果の見える化
+        a(herf="javascript.void(0)")
+          label for="tab-3"
+            | 効果の見える化
       .description.is-center.no-padding
-        | facebookインサイト+Web献金
+        a(herf="javascript.void(0)")
+          label for="tab-3"
+            | facebookインサイト+Web献金
 
   .tab-contents
     .section
