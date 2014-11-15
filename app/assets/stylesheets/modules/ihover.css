@@ -28,6 +28,7 @@
   border-radius: 50%;
 }
 .ih-item.circle .img {
+  cursor: pointer;
   position: relative;
   width: 220px;
   height: 220px;
@@ -49,6 +50,7 @@
   border-radius: 50%;
 }
 .ih-item.circle .info {
+  cursor: pointer;
   position: absolute;
   top: 0;
   bottom: 0;
