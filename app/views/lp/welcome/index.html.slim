@@ -5,7 +5,13 @@
         offset: $(".headroom-offset").offset().top
 
       $(".to-top").click ->
-          $('body, html').animate({ scrollTop: 0 }, 500)
+        $('body, html').animate({ scrollTop: 0 }, 500)
+
+      $(".js-show").hover ->
+        $el = $(".first-dummy-message").addClass("is-red-reverse")
+        $(".first",$el).addClass("is-hidden")
+        $(".second",$el).removeClass("is-hidden")
+        $(".btn",$el).removeClass("is-red-reverse").text("問い合わせる")
 
 
 // 固定のもの
@@ -17,31 +23,21 @@
       =fa_icon "arrow-up"
       | トップに戻る
 
-.header.container.is-red.is-fullwidth
-  .row1.grid
-    .logo
-      img(src=image_path("logo.png"))
-
 // 赤い部分
-.container.is-red.is-center.row9
-  .title.is-center.is-large 警告
+.first-dummy-message.container.is-red.is-center.row9
+  .title.is-center.is-large.first 警告
+  .title.is-center.is-large.is-hidden.second 政治発進
   .grid
-    .col8.push2.is-center.is-narrow
+    .col8.push2.is-center.is-narrow.first
       | 自分のホームページを持っていない候補者の皆様、
       br
       | 見た目の悪いホームページを使っている立候補予定の皆様は、すでに他の候補者から遅れをとっています。
+    .col8.push2.is-center.is-narrow.second.is-hidden
+      | 初期費用0円、月額1万円で、自分の政治理念や活動を有権者に発信できる、
+      br
+      | 自分だけのオフィシャルホームページを持ちましょう。
   .grid.row5
-    a.btn.is-huge.is-center.is-red-reverse(href=new_lp_contact_path) どうする？
-
-.container.is-red-reverse.is-large.is-center.is-hidden
-  h1.title.is-center.is-large 政治発進
-  .grid.row4
-    .col8.push2.is-center.is-narrow
-      | 自分のホームページを持っていない候補者の皆様、
-      br
-      | 見た目の悪いホームページを使っている立候補予定の皆様は、すでに他の候補者から遅れをとっています。
-  .grid.row6
-    a.btn.is-huge.is-center.is-red(href=new_lp_contact_path) どうする？
+    a.btn.is-huge.is-center.is-red.is-red-reverse.js-show(href=new_lp_contact_path) どうする？
 
 .headroom-offset
 
