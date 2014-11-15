@@ -1,8 +1,14 @@
 - content_for :js do
   coffee:
     $ ->
+      $headroom_el = $(".headroom-offset")
+      $tab_el = $(".tab-contents")
+
       $(".header:first").headroom
-        offset: $(".headroom-offset").offset().top
+        offset: $headroom_el.offset().top
+
+      $("input[name='switch']").change ->
+        $('body, html').animate({ scrollTop: $tab_el.offset().top - 160 }, 500)
 
       $(".to-top").click ->
         $('body, html').animate({ scrollTop: 0 }, 500)
@@ -94,9 +100,13 @@
               h3  オフィシャルサイトを活用
               p  クリックで表示
       .description.is-large.is-center
-        | みんなに知ってもらう
+        a(herf="javascript.void(0)")
+          label for="tab-1"
+            | みんなに知ってもらう
       .description.is-center.no-padding
-        | オフィシャルサイトでアピール
+        a(herf="javascript.void(0)")
+          label for="tab-1"
+            | オフィシャルサイトでアピール
 
     .col4.push4
       .ih-item.circle.colored.effect6.scale_up.is-center
@@ -108,9 +118,13 @@
               h3  facebookを活用
               p  クリックで表示
       .description.is-large.is-center
-        | 支援者を増やす
+        a(herf="javascript.void(0)")
+          label for="tab-2"
+            | 支援者を増やす
       .description.is-center.no-padding
-        | facebookでコミュニケーション
+        a(herf="javascript.void(0)")
+          label for="tab-2"
+            | facebookでコミュニケーション
     .col4.push8
       .ih-item.circle.colored.effect6.scale_up.is-center
         a(herf="javascript.void(0)")
@@ -121,30 +135,47 @@
               h3  ●●●を活用
               p  クリックで表示
       .description.is-large.is-center
-        | 効果の見える化
+        a(herf="javascript.void(0)")
+          label for="tab-3"
+            | 効果の見える化
       .description.is-center.no-padding
-        | facebookインサイト+Web献金
+        a(herf="javascript.void(0)")
+          label for="tab-3"
+            | facebookインサイト+Web献金
 
   .tab-contents
     .section
       .container.is-green.is-large.has-top-lft-arrow
-        .title みんなに知ってもらうq
-        .description.is-large スマホ対応
+        .grid
+          .push1.col10
+            .title みんなに知ってもらう
+            .description
+              | 「あなたがプライベートでインターネットへアクセスする際、利用する機器は次のうちどれですか。当てはまるものをすべてお選びください。」という質問に対して、スマートフォンが51.5%を占めており、デスクトップPCの42.5%を上回る結果が出ています。つまり、インターネットを通じて有権者に情報を発信する場合、スマートフォンはデスクトップPCよりも重要視するべきデバイスと言えます。
+              | 皆様のホームページはスマートフォンによる閲覧に対応していますか？
+        .grid
+          .push1.col10
+            .title スマホ対応
+            .description
+              | 「あなたがプライベートでインターネットへアクセスする際、利用する機器は次のうちどれですか。当てはまるものをすべてお選びください。」という質問に対して、スマートフォンが51.5%を占めており、デスクトップPCの42.5%を上回る結果が出ています。つまり、インターネットを通じて有権者に情報を発信する場合、スマートフォンはデスクトップPCよりも重要視するべきデバイスと言えます。
+              | 皆様のホームページはスマートフォンによる閲覧に対応していますか？
 
-        .description.is-large 話す
-        .description.is-large 広がる
+
     .section
       .container.is-green.is-large.has-top-ce-arrow
-        .title facebookをフル活用
-        .description.is-large 報告
-        .description.is-large 話す
-        .description.is-large 広がる
+        .grid
+          .push1.col10
+            .title facebookをフル活用
+            .description
+              | 「あなたがプライベートでインターネットへアクセスする際、利用する機器は次のうちどれですか。当てはまるものをすべてお選びください。」という質問に対して、スマートフォンが51.5%を占めており、デスクトップPCの42.5%を上回る結果が出ています。つまり、インターネットを通じて有権者に情報を発信する場合、スマートフォンはデスクトップPCよりも重要視するべきデバイスと言えます。
+              | 皆様のホームページはスマートフォンによる閲覧に対応していますか？
     .section
       .container.is-green.is-large.has-top-rgt-arrow
-        .title 効果の見える化
-        .description.is-large 報告
-        .description.is-large 話す
-        .description.is-large 広がる
+        .grid
+          .push1.col10
+            .title 有権者の動きをフィードバック
+            .description
+              | インターネットでは、ホームページのアクセス者がいつ訪問したか、どのような検索ワードでアクセスしたか、どの程度の時間滞在し、どのような動きをしたか等の流れが全て確認できます。
+              | 有権者があなたのどこに興味を持ち、何を知りたがっているか等を解析するために非常に有益な情報を集めることができ、今後の選挙活動を行う上でとても役に立つ情報が集められます。
 
 .container.is-yellow
   .row9

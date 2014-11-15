@@ -1,20 +1,20 @@
 .headroom
   transition: transform 200ms linear
-.headroom--pinned
-  //transform: translateY(-100%)
-  //transform: translateY(0%)
-.headroom--unpinned
-  //transform: translateY(0%)
-  transform: translateY(-100%)
 .headroom--top
   //margin-top: 53px
   //transform: translateY(-100%)
-  position: absolute
+  //position: absolute
   .to-top
     display: none
 
 .headroom--not-top
-  margin-top: 0
-  transform: translateY(0)
+  //margin-top: 0
+  //transform: translateY(0)
   .to-top
     display: block
+
+.headroom--pinned
+  transform: translateY(0)
+
+.headroom--unpinned
+  transform: translateY(-80%)
