@@ -31,6 +31,12 @@
         $(".second",$el).addClass("is-hidden")
         $(".btn",$el).addClass("is-red-reverse").text("どうする？")
 
+      $("form").bind "ajax:success", ->
+        alert()
+
+      $("form").bind "ajax:error", ->
+        alert("失敗")
+
 // ヘッダ
 .header.container.is-red.is-fixed.is-fullwidth.headroom--top
   .row1.grid
@@ -218,7 +224,7 @@
     a.modal-close(href="javascript:void(0);") &times;
     .modal-title お問い合わせ
     .form
-      = form_for Contact.new, url: lp_contacts_path do |f|
+      = form_for Contact.new, url: lp_contacts_path(format: :json), remote: true do |f|
         .form-item
           = f.label :first_name
           = f.text_field :first_name, class: "is-half"
