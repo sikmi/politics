@@ -1,8 +1,8 @@
-class CreateVenues < ActiveRecord::Migration
+class CreateSites < ActiveRecord::Migration
   def change
-    create_table :site do |t|
-      t.references  :client_id
-      t.references  :site_theme_id
+    create_table :sites do |t|
+      t.references  :client, index: true
+      t.references  :site_theme, index: true
       t.string      :subdomain
       t.string      :title
       t.string      :keyword
@@ -10,9 +10,8 @@ class CreateVenues < ActiveRecord::Migration
       t.text        :layout
       t.text        :css
       t.text        :attrs
-      t.integer     :creator_id
-      t.integer     :updater_id
-      t.integer     :deleter_id
+      t.references   :creator
+      t.references   :updater
       t.timestamps
     end
   end
