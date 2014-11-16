@@ -12,6 +12,9 @@ class CreateContacts < ActiveRecord::Migration
       t.string      :city
       t.string      :district
       t.string      :building
+      t.string      :tel1
+      t.string      :tel2
+      t.string      :tel3
       t.text        :comment
       t.timestamps
     end

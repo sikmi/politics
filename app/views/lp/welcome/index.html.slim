@@ -54,14 +54,8 @@
       br
       | 自分だけのオフィシャルホームページを持ちましょう。
   .grid.row5
-    a.btn.is-huge.is-center.is-red.is-red-reverse.js-show(href=new_lp_contact_path) どうする？
+    a.btn.is-huge.is-center.is-red.is-red-reverse.js-show.modal-open(href=new_lp_contact_path) どうする？
 
-
-// 問い合わせ用のform
-.contact.form.is-transparent
-  .form
-    = form_for Contact.new, url: lp_contacts_path do |f|
-      = f.text_field :first_name
 
 
 // ヘッダのスクロール監視の開始ポイント
@@ -184,6 +178,7 @@
               | インターネットでは、ホームページのアクセス者がいつ訪問したか、どのような検索ワードでアクセスしたか、どの程度の時間滞在し、どのような動きをしたか等の流れが全て確認できます。
               | 有権者があなたのどこに興味を持ち、何を知りたがっているか等を解析するために非常に有益な情報を集めることができ、今後の選挙活動を行う上でとても役に立つ情報が集められます。
 
+/ 料金
 .container.is-yellow
   .row9
     .grid.row2
@@ -200,6 +195,7 @@
       .col5.push6.row2
         img(src=image_url("price.png"))
 
+// 最後のメッセージ
 .dummy-message.container.is-red.is-center.row6
   .description.row4.is-center
     | あなたが自分のホームページを作成することにより、
@@ -211,6 +207,34 @@
     | あなたが日本を良くするために日々行っている活動が、
     br
     | 多くの有権者に対して周知されるのです！！
-  a.btn.is-large.is-red.is-red-reverse.js-show(href=new_lp_contact_path)
+  a.btn.is-large.is-red.is-red-reverse.js-show.modal-open(href=new_lp_contact_path)
     span.ming-style 政治発進
     span  をさらに詳しく聞く
+
+// 問い合わせ用のform
+.modal
+  .modal-backdrop
+  a.modal-close(href="javascript:void(0);") &times;
+  .modal-window
+    .modal-title お問い合わせ
+    .form
+      = form_for Contact.new, url: lp_contacts_path do |f|
+        .form-item
+          = f.label :first_name
+          = f.text_field :first_name, class: "is-half"
+          = f.text_field :last_name,  class: "is-half"
+        .form-item
+          = f.label :email
+          = f.text_field :email
+        .form-item
+          = f.label :tel1
+          = f.text_field :tel1, class: "is-one-third"
+          = f.text_field :tel2, class: "is-one-third"
+          = f.text_field :tel3, class: "is-one-third"
+        .form-item
+          = f.label :comment
+          = f.text_area :comment
+
+        .form-item.is-ce
+          = f.submit "送信", class: "btn"
+
