@@ -4,6 +4,10 @@
       $headroom_el = $(".headroom-offset")
       $tab_el = $(".tab-contents")
 
+      # sectionの下に入っているcontainer高さを同じものに揃える
+      $section_el = $(".section")
+      $section_el.children(".container").height $section_el.height()
+
       $(".header:first").headroom
         offset: $headroom_el.offset().top
 
@@ -13,14 +17,15 @@
       $(".to-top").click ->
         $('body, html').animate({ scrollTop: 0 }, 500)
 
-      $el = $(".first-dummy-message")
       $(".js-show").mouseover ->
+        $el = $(@).parents(".dummy-message:first")
         $el.addClass("is-red-reverse")
         $(".first",$el).addClass("is-hidden")
         $(".second",$el).removeClass("is-hidden")
         $(".btn",$el).removeClass("is-red-reverse").text("問い合わせる")
 
       $(".js-show").mouseout ->
+        $el = $(@).parents(".dummy-message:first")
         $el.removeClass("is-red-reverse")
         $(".first",$el).removeClass("is-hidden")
         $(".second",$el).addClass("is-hidden")
@@ -36,7 +41,7 @@
       | トップに戻る
 
 // 赤い部分
-.first-dummy-message.container.is-red.is-center.row9
+.dummy-message.container.is-red.is-center.row9
   .title.is-center.is-large.first 警告
   .title.is-center.is-large.is-hidden.second 政治発進
   .grid
@@ -181,7 +186,8 @@
   .row9
     .grid.row2
       .title.is-center
-        | 初期費用0円・
+        | 初期費用0円
+        br
         | 月額たった1万円
     .grid
       .col5.push1
@@ -192,7 +198,7 @@
       .col5.push6.row2
         img(src=image_url("price.png"))
 
-.container.is-red.is-large.is-center
+.dummy-message.container.is-red.is-large.is-center
   .description.is-large.is-center
     | あなたが自分のホームページを作成することにより、
     br
@@ -203,6 +209,6 @@
     | あなたが日本を良くするために日々行っている活動が、
     br
     | 多くの有権者に対して周知されるのです！！
-  a.btn.is-large.is-red-reverse(href=new_lp_contact_path)
+  a.btn.is-large.is-red.is-red-reverse.js-show(href=new_lp_contact_path)
     span.ming-style 政治発進
     span  をさらに詳しく聞く
