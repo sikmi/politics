@@ -1,6 +1,6 @@
-class CreateVenues < ActiveRecord::Migration
+class CreatePvs < ActiveRecord::Migration
   def change
-    create_table :pv do |t|
+    create_table :pvs do |t|
       t.references  :site_id
       t.timestamps
     end

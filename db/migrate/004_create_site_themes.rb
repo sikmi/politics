@@ -1,9 +1,7 @@
-class CreateVenues < ActiveRecord::Migration
+class CreateSiteThemes < ActiveRecord::Migration
   def change
-    create_table :page_theme do |t|
-      t.references  :site_id
-      t.string      :name
-      t.text        :html
+    create_table :site_themes do |t|
+      t.text        :layout
       t.text        :css
       t.text        :attrs
       t.integer     :creator_id

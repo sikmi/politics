@@ -1,6 +1,6 @@
-class CreateVenues < ActiveRecord::Migration
+class CreateSites < ActiveRecord::Migration
   def change
-    create_table :site do |t|
+    create_table :sites do |t|
       t.references  :client_id
       t.references  :site_theme_id
       t.string      :subdomain

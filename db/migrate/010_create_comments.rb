@@ -1,6 +1,6 @@
-class CreateVenues < ActiveRecord::Migration
+class CreateComments < ActiveRecord::Migration
   def change
-    create_table :contact do |t|
+    create_table :comments do |t|
       t.references  :client_id
       t.integer     :item_id
       t.string      :item_type

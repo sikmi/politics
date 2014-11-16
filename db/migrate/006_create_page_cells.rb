@@ -1,6 +1,6 @@
-class CreateVenues < ActiveRecord::Migration
+class CreatePageCells < ActiveRecord::Migration
   def change
-    create_table :page_cell do |t|
+    create_table :page_cells do |t|
       t.references  :page_id
       t.string      :category
       t.string      :title
