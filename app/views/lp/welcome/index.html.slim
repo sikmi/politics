@@ -31,7 +31,7 @@
         $(".second",$el).addClass("is-hidden")
         $(".btn",$el).addClass("is-red-reverse").text("どうする？")
 
-// 固定のもの
+// ヘッダ
 .header.container.is-red.is-fixed.is-fullwidth.headroom--top
   .row1.grid
     .logo.col2
@@ -64,8 +64,10 @@
     = f.text_field :name
 
 
+// ヘッダのスクロール監視の開始ポイント
 .headroom-offset
 
+// 選挙期間は365
 .container.is-purple-reverse.row9
   .siteimage
   .grid.row3
@@ -86,7 +88,7 @@
          Web上において皆様のポリシーを公表することが望ましいと思います
 
 
-
+// 3つのポイント
 .container.is-green-reverse
 
   input type="radio" name="switch" id="tab-1"
@@ -198,8 +200,8 @@
       .col5.push6.row2
         img(src=image_url("price.png"))
 
-.dummy-message.container.is-red.is-large.is-center
-  .description.is-large.is-center
+.dummy-message.container.is-red.is-center.row6
+  .description.row4.is-center
     | あなたが自分のホームページを作成することにより、
     br
     | あなたの熱い政治理念が、
