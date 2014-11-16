@@ -1,6 +1,8 @@
 @import "config/color"
 
 .modal
+  width: 100%
+
   .modal-backdrop
     height: 100%
     width: 100%
@@ -14,28 +16,29 @@
 
   .modal-close
     transition: top 200ms linear
-    z-index: 5
-    position: fixed
-    top: 5%
-    right: 5%
+    position: absolute
+    top: 0
+    right: 0
     margin-right: 10px
     font-size: 50px
     color: $color_black
     line-height: 40px
     text-decoration: none
-    top: -100%
     &:hover
       color: $color_red
 
   .modal-window
     transition: top 200ms linear
     width: 90%
-    height: 90%
+    max-height: 90%
     z-index: 4
     position: fixed
     background-color: #fff
     top: -100%
-    left: 5%
+    left: 0
+    right: 0
+    margin-left: auto
+    margin-right: auto
 
   .modal-title
     background-color: $color_light_gray
@@ -46,7 +49,10 @@
   &.is-open
     .modal-window
       top: 5%
-    .modal-close
-      top: 5%
     .modal-backdrop
       display: block
+
+  &.is-form
+    .modal-window
+      max-width: 620px
+

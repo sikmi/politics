@@ -212,10 +212,10 @@
     span  をさらに詳しく聞く
 
 // 問い合わせ用のform
-.modal
+.modal.is-form
   .modal-backdrop
-  a.modal-close(href="javascript:void(0);") &times;
   .modal-window
+    a.modal-close(href="javascript:void(0);") &times;
     .modal-title お問い合わせ
     .form
       = form_for Contact.new, url: lp_contacts_path do |f|
@@ -236,5 +236,4 @@
           = f.text_area :comment
 
         .form-item.is-ce
-          = f.submit "送信", class: "btn"
-
+          = f.submit "送信", class: "btn is-large"
