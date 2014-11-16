@@ -1,4 +1,5 @@
 @import "compass/utilities/general/clearfix"
+@import "config/responsive"
 
 #wrapper
   +clearfix
@@ -37,3 +38,12 @@
 #tab-3:checked ~ .tab-contents  
   -webkit-transform: translateX(-66%)
   transform: translateX(-66%) 
+
+
+@media (max-width: $width_sp)
+  .tab-contents
+    width: 100%
+
+  .section
+    clear: both
+    width: 100%

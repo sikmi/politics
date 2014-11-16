@@ -1,3 +1,5 @@
+@import "config/responsive"
+
 .is-center
   margin-left: auto
   margin-right: auto
@@ -39,3 +41,13 @@
 
 .is-fullwidth
   width: 100%
+
+// responsive
+.is-hidden-in-sp
+  display: block
+
+@media (max-width: $width_sp)
+  .is-hidden-in-sp
+    display: none !important
+  .is-shown-in-sp
+    display: block !important

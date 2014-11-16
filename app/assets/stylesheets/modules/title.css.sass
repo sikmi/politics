@@ -1,3 +1,5 @@
+@import "config/responsive"
+
 .title
   font-size: 64px
   font-family: serif
@@ -10,6 +12,13 @@
     text-align: left
   &.is-large
     font-size: 76px
-    
   &.down
     padding-top: 170px
+
+@media (max-width: $width_sp)
+
+  .title
+    font-size: 44px
+    &.is-large
+      font-size: 72px
+
