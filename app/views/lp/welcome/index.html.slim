@@ -1,40 +1,66 @@
-.container.is-red.is-large.is-center
-  h1 政治発進
+- content_for :js do
+  coffee:
+    $ ->
+      $(".header:first").headroom
+        offset: $(".headroom-offset").offset().top
+
+      $(".to-top").click ->
+          $('body, html').animate({ scrollTop: 0 }, 500)
+
+
+// 固定のもの
+.header.container.is-red.is-fixed.is-fullwidth.headroom--top
+  .row1.grid
+    .logo.col2
+      img(src=image_path("logo.png"))
+    a.col2.push10.to-top.is-rgt(href="#")
+      =fa_icon "arrow-up"
+      | トップに戻る
+
+.header.container.is-red.is-fullwidth
+  .row1.grid
+    .logo
+      img(src=image_path("logo.png"))
+
+// 赤い部分
+.container.is-red.is-center.row9
   .title.is-center.is-large 警告
   .grid
     .col8.push2.is-center.is-narrow
       | 自分のホームページを持っていない候補者の皆様、
       br
       | 見た目の悪いホームページを使っている立候補予定の皆様は、すでに他の候補者から遅れをとっています。
-  a.btn.is-bold.is-large.is-center.is-red-reverse(href=new_lp_contact_path) どうする？
+  .grid.row5
+    a.btn.is-huge.is-center.is-red-reverse(href=new_lp_contact_path) どうする？
 
-  .container.is-red-reverse.is-large.is-center.is-btn-shown
-    h1 政治発進
-    .title.is-center.is-large 警告
-    .grid
-      .col8.push2.is-center.is-narrow
-        | 自分のホームページを持っていない候補者の皆様、
-        br
-        | 見た目の悪いホームページを使っている立候補予定の皆様は、すでに他の候補者から遅れをとっています。
-    .grid.row6
-      a.btn.is-bold.is-large.is-center.is-red(href=new_lp_contact_path) どうする？
+.container.is-red-reverse.is-large.is-center.is-hidden
+  h1.title.is-center.is-large 政治発進
+  .grid.row4
+    .col8.push2.is-center.is-narrow
+      | 自分のホームページを持っていない候補者の皆様、
+      br
+      | 見た目の悪いホームページを使っている立候補予定の皆様は、すでに他の候補者から遅れをとっています。
+  .grid.row6
+    a.btn.is-huge.is-center.is-red(href=new_lp_contact_path) どうする？
 
-  .container.is-purple-reverse.is-large
-    .grid
-      .col6
-        img src="http://placehold.it/768x700"
-      .col6.push6
-        .title.is-center.is-large.down 選挙期間は365日
-        .description
-         | あなたが自身のポリシーを有権者に伝えるために最も有効な手段としては何が考えられますか？
-         br
-         | 「今も昔も有権者の皆様に自分のポリシーを訴えるのは、演説で実際に有権者の顔を見ながら行うことが一番」　とお考えでしょうか。
-         | 弊社も演説が最も効果的な方法であると考えております。
-         br
-         | しかしながら、演説を行える回数は限られており、また演説の聴衆も基本的には皆様に興味を覚えた有権者が中心となりがちです。
-         br
-         | そのため、忙しい有権者であっても、皆様の政策をいつでも確認できる場所を提供することで
-           Web上において皆様のポリシーを公表することが望ましいと思います
+.headroom-offset
+
+.container.is-purple-reverse.is-large
+  .grid
+    .col6
+      img src="http://placehold.it/768x700"
+    .col6.push6
+      .title.is-center.is-large.down 選挙期間は365日
+      .description
+       | あなたが自身のポリシーを有権者に伝えるために最も有効な手段としては何が考えられますか？
+       br
+       | 「今も昔も有権者の皆様に自分のポリシーを訴えるのは、演説で実際に有権者の顔を見ながら行うことが一番」　とお考えでしょうか。
+       | 弊社も演説が最も効果的な方法であると考えております。
+       br
+       | しかしながら、演説を行える回数は限られており、また演説の聴衆も基本的には皆様に興味を覚えた有権者が中心となりがちです。
+       br
+       | そのため、忙しい有権者であっても、皆様の政策をいつでも確認できる場所を提供することで
+         Web上において皆様のポリシーを公表することが望ましいと思います
 
 
 
@@ -47,7 +73,7 @@
   //ul.tabBtn(style="list-style:none;")
   .grid.row2
     .col4
-      .ih-item.circle.colored.effect6.scale_up
+      .ih-item.circle.colored.effect6.scale_up.is-center
         a(herf="javascript.void(0)")
           label for="tab-1"
             .img(align="center")
@@ -58,9 +84,9 @@
       .description.is-large.is-center
        | みんなに知ってもらう
       .description.is-center.no-padding
-       | オフィシャルサイトでアピール    
+       | オフィシャルサイトでアピール
     .col4.push4
-      .ih-item.circle.colored.effect6.scale_up
+      .ih-item.circle.colored.effect6.scale_up.is-center
         a(herf="javascript.void(0)")
           label for="tab-2"
             .img 
@@ -73,10 +99,10 @@
       .description.is-center.no-padding
        | facebookでコミュニケーション
     .col4.push8
-      .ih-item.circle.colored.effect6.scale_up
+      .ih-item.circle.colored.effect6.scale_up.is-center
         a(herf="javascript.void(0)")
           label for="tab-3"
-            .img 
+            .img
               img src="http://placehold.it/300x150"
             .info
               h3  ●●●を活用

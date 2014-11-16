@@ -1,4 +1,5 @@
 @import "config/color"
+@import "config/responsive"
 @import "compass/css3/border-radius"
 
 @mixin btn($color_bg, $color_font: $color_white)
@@ -13,10 +14,11 @@
   background-color: $color_red
   color: $color_white
   display: inline-block
-  padding: 1em 2em
+  padding: 0.6em 2.4em
   cursor: pointer
+  text-decoration: none
   transition: background-color 0.2s, transform 0.2s
-  +border-radius(30px)
+  +border-radius(2em)
 
   &:hover
     background-color: darken($color_red,10%)
@@ -37,7 +39,9 @@
 
   &.is-large
     font-size: 150%
-    +border-radius(45px)
+
+  &.is-huge
+    font-size: 180%
 
   &+.is-btn-shown
     transition: height 1.0s, margin 1.0s
@@ -48,3 +52,8 @@
     &+.is-btn-shown
       height: 500px
       margin-top: -500px
+
+@media (max-width: $width_sp)
+  .btn
+    &.is-huge
+      font-size: 150%

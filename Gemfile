@@ -18,6 +18,9 @@ gem "font-awesome-rails"
 # js
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
+gem 'lodash-rails'
+gem 'angularjs-rails'
+gem 'headroom-rails', github: 'sikmi/headroom-rails'
 gem 'turbolinks'
 
 # view
