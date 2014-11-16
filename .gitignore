@@ -21,3 +21,14 @@
 *.iml
 
 /config/database.yml
+# rails
+/Gemfile.lock
+/db/schema.rb
+/config/database.yml
+/tmp
+/log
+
+/public/uploads
+
+# rubymine
+/.idea
