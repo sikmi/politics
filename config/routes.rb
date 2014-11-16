@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root "lp/welcome#index"
 
   scope "/lp", module: "lp", as: :lp do
-    resources :contacts, only: [:new,:show]
+    resources :contacts, only: [:new,:show,:create]
   end
 
   if Rails.env.development?

@@ -59,9 +59,9 @@
 
 // 問い合わせ用のform
 .contact.form.is-transparent
-  .form aaa
-  /= form_for Contact.new do |f|
-    = f.text_field :name
+  .form
+    = form_for Contact.new, url: lp_contacts_path do |f|
+      = f.text_field :first_name
 
 
 // ヘッダのスクロール監視の開始ポイント
