@@ -61,8 +61,8 @@ group :development do
 
   gem 'nokogiri'
   # 実験用のメール
-  #gem 'letter_opener'
-  #gem 'letter_opener_web', '~> 1.2.0'
+  gem 'letter_opener'
+  gem 'letter_opener_web', '~> 1.2.0'
 
   # deploy
   gem 'capistrano', '~> 3.2.0'
