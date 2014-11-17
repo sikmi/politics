@@ -2,8 +2,7 @@ class Lp::ContactsController < Lp::ApplicationController
 
   def create
     @contact = Contact.new(create_params)
-
-    if @contact.valid?
+    if @contact.save
       render json: {}, status: 201
     else
       render json: {errors: @contact.errors.full_messages}, status: 422
@@ -13,7 +12,7 @@ class Lp::ContactsController < Lp::ApplicationController
   private
 
   def create_params
-    params.fetch(:contact,{}).permit(:email,:first_name,:last_name,:tel1,:tel2,:tel3)
+    params.fetch(:contact,{}).permit(:email,:first_name,:last_name,:tel1,:tel2,:tel3,:comment)
   end
 
 end
