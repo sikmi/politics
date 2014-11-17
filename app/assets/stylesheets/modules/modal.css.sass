@@ -28,6 +28,8 @@
       color: $color_red
 
   .modal-window
+    position: relative
+    overflow-y: hidden
     transition: top 200ms linear
     width: 90%
     max-height: 90%
@@ -45,6 +47,9 @@
     padding: 12px 20px
     font-size: 120%
     font-weight: bold
+
+  .modal-body
+    overflow-y: scroll
 
   &.is-open
     .modal-window

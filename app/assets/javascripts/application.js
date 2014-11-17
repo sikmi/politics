@@ -16,4 +16,5 @@
 // require angular
 //= require _headroom.jquery
 //= require turbolinks
-//= require_tree .
+//= require_tree ./bases
+//= require_tree ./modules

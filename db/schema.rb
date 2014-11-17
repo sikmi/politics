@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 10) do
     t.datetime "updated_at"
   end
 
-  create_table "contact", force: true do |t|
+  create_table "comments", force: true do |t|
     t.integer  "client_id"
     t.integer  "item_id"
     t.integer  "user_id"
@@ -57,9 +57,9 @@ ActiveRecord::Schema.define(version: 10) do
     t.datetime "updated_at"
   end
 
-  add_index "contact", ["client_id"], name: "index_contact_on_client_id", using: :btree
-  add_index "contact", ["item_id"], name: "index_contact_on_item_id", using: :btree
-  add_index "contact", ["user_id"], name: "index_contact_on_user_id", using: :btree
+  add_index "comments", ["client_id"], name: "index_comments_on_client_id", using: :btree
+  add_index "comments", ["item_id"], name: "index_comments_on_item_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "contacts", force: true do |t|
     t.string   "first_name"
