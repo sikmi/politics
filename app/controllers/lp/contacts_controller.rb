@@ -12,7 +12,7 @@ class Lp::ContactsController < Lp::ApplicationController
   private
 
   def create_params
-    params.fetch(:contact,{}).permit(:email,:first_name,:last_name,:tel1,:tel2,:tel3)
+    params.fetch(:contact,{}).permit(:email,:first_name,:last_name,:tel1,:tel2,:tel3,:comment)
   end
 
 end

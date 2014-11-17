@@ -33,17 +33,21 @@
           $(@).html($(@).data("text"))
 
       $("form").bind "ajax:success", ->
-        alert()
+        $window_el = $(".modal-window:first")
+        $(".form",$window_el).addClass("is-hidden")
+        $(".success",$window_el).removeClass("is-hidden")
 
-      $("form").bind "ajax:error", ->
-        alert("失敗")
+      $("form").bind "ajax:error", (e,response)->
+        res = JSON.parse(response.responseText)
+        console.log @
+        $(@).children(".form-error").removeClass("is-hidden").html res.errors.join("<br />")
 
 // ヘッダ
 .header.container.is-red.is-fixed.is-fullwidth.headroom--top
   .row1.grid
     .logo.col2
       img(src=image_path("logo.png"))
-    a.col2.push10.to-top.is-rgt(href="#")
+    a.col2.push10.to-top.is-rgt.is-hidden-in-sp(href="#")
       =fa_icon "arrow-up"
       | トップに戻る
 
@@ -214,9 +218,8 @@
     | あなたが日本を良くするために日々行っている活動が、
     br
     | 多くの有権者に対して周知されるのです！！
-  a.btn.is-large.is-red.is-red-reverse.js-show.modal-open(href=new_lp_contact_path data-text="<span class='ming-style'>政治発進</span><span>  をさらに詳しく聞く</span>")
-    span.ming-style 政治発進
-    span  をさらに詳しく聞く
+  a.btn.is-large.is-red.is-red-reverse.js-show.modal-open(href=new_lp_contact_path data-text="詳しく聞く")
+    span 詳しく聞く
 
 // 問い合わせ用のform
 .modal.is-form
@@ -227,6 +230,11 @@
       a.modal-close(href="javascript:void(0);") &times;
 
     .modal-body
+      .container.is-blue.is-hidden.success.row12
+        .description.is-large.row12
+          | お問い合わせありがとうございました。
+          br
+          | あらためてご連絡いたしますので、今しばらくお待ちください。
       .form
         .description
           | 下記の電話番号に直接お電話いただくか、
@@ -235,13 +243,15 @@
           =link_to "050-5539-9295", "tel:05055399295"
           br
           | 下記フォームに必要な情報を入力の上、「送信」ボタンをクリックしてください。
+
         = form_for Contact.new, url: lp_contacts_path(format: :json), remote: true do |f|
+          .form-error.is-hidden
           .form-item
-            = f.label :name
-            = f.text_field :first_name, class: "is-half"
+            = f.label :name, class: "required"
             = f.text_field :last_name,  class: "is-half"
+            = f.text_field :first_name, class: "is-half"
           .form-item
-            = f.label :email
+            = f.label :email, class: "required"
             = f.text_field :email
           .form-item
             = f.label :tel
@@ -249,7 +259,7 @@
             = f.text_field :tel2, class: "is-one-third"
             = f.text_field :tel3, class: "is-one-third"
           .form-item
-            = f.label :comment
+            = f.label :comment, class: "required"
             = f.text_area :comment
 
           .form-item.is-ce
