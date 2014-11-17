@@ -29,7 +29,8 @@
         $el.removeClass("is-red-reverse")
         $(".first",$el).removeClass("is-hidden")
         $(".second",$el).addClass("is-hidden")
-        $(".btn",$el).addClass("is-red-reverse").text("どうする？")
+        $(".btn",$el).addClass("is-red-reverse").each ->
+          $(@).html($(@).data("text"))
 
       $("form").bind "ajax:success", ->
         alert()
@@ -60,7 +61,7 @@
       br
       | 自分だけのオフィシャルホームページを持ちましょう。
   .grid.row5
-    a.btn.is-huge.is-center.is-red.is-red-reverse.js-show.modal-open(href=new_lp_contact_path) どうする？
+    a.btn.is-huge.is-center.is-red.is-red-reverse.js-show.modal-open(href=new_lp_contact_path data-text="どうする？") どうする？
 
 
 
@@ -213,7 +214,7 @@
     | あなたが日本を良くするために日々行っている活動が、
     br
     | 多くの有権者に対して周知されるのです！！
-  a.btn.is-large.is-red.is-red-reverse.js-show.modal-open(href=new_lp_contact_path)
+  a.btn.is-large.is-red.is-red-reverse.js-show.modal-open(href=new_lp_contact_path data-text="<span class='ming-style'>政治発進</span><span>  をさらに詳しく聞く</span>")
     span.ming-style 政治発進
     span  をさらに詳しく聞く
 
@@ -221,25 +222,35 @@
 .modal.is-form
   .modal-backdrop
   .modal-window
-    a.modal-close(href="javascript:void(0);") &times;
-    .modal-title お問い合わせ
-    .form
-      = form_for Contact.new, url: lp_contacts_path(format: :json), remote: true do |f|
-        .form-item
-          = f.label :first_name
-          = f.text_field :first_name, class: "is-half"
-          = f.text_field :last_name,  class: "is-half"
-        .form-item
-          = f.label :email
-          = f.text_field :email
-        .form-item
-          = f.label :tel1
-          = f.text_field :tel1, class: "is-one-third"
-          = f.text_field :tel2, class: "is-one-third"
-          = f.text_field :tel3, class: "is-one-third"
-        .form-item
-          = f.label :comment
-          = f.text_area :comment
+    .modal-title
+      | お問い合わせ
+      a.modal-close(href="javascript:void(0);") &times;
 
-        .form-item.is-ce
-          = f.submit "送信", class: "btn is-large"
+    .modal-body
+      .form
+        .description
+          | 下記の電話番号に直接お電話いただくか、
+          br
+          | 電話番号:&nbsp;
+          =link_to "050-5539-9295", "tel:05055399295"
+          br
+          | 下記フォームに必要な情報を入力の上、「送信」ボタンをクリックしてください。
+        = form_for Contact.new, url: lp_contacts_path(format: :json), remote: true do |f|
+          .form-item
+            = f.label :name
+            = f.text_field :first_name, class: "is-half"
+            = f.text_field :last_name,  class: "is-half"
+          .form-item
+            = f.label :email
+            = f.text_field :email
+          .form-item
+            = f.label :tel
+            = f.text_field :tel1, class: "is-one-third"
+            = f.text_field :tel2, class: "is-one-third"
+            = f.text_field :tel3, class: "is-one-third"
+          .form-item
+            = f.label :comment
+            = f.text_area :comment
+
+          .form-item.is-ce
+            = f.submit "送信", class: "btn is-large"
