@@ -53,17 +53,23 @@
 
 // 赤い部分
 .dummy-message.container.is-red.is-center.row9
-  .title.is-center.is-large.first 警告
-  .title.is-center.is-large.is-hidden.second 政治発進
+  .title.is-center.is-large.first.is-hidden-in-sp 警告
+  .title.is-center.is-large.is-hidden.second.is-shown-in-sp 政治発進
   .grid
-    .col8.push2.is-center.is-narrow.first
-      | インターネットによる選挙運動が可能となった今、未だに自身のオフィシャルホームページを持っていない、
+    .col8.push2.is-center.is-narrow.first.is-hidden-in-sp(style="height: 90px;")
+      | インターネットによる選挙運動が可能となった今、
       br
-      | または見た目の悪いホームページを使っている政治家、立候補者の皆様は、すでに他の候補者から遅れをとっています。
-    .col8.push2.is-center.is-narrow.second.is-hidden
-      | 初期費用0円、月額1万円で、あなたの政治理念や日々の活動を有権者に発信できる、
+      | 未だにオフィシャルホームページを持っていない、
       br
-      | 自分だけのオフィシャルホームページを持ちましょう。
+      | または見た目の悪いホームページを使っている
+      br
+      | 政治家、立候補者の皆様は、すでに他の候補者から遅れをとっています。
+    .col8.push2.is-center.is-narrow.second.is-hidden.is-shown-in-sp(style="height: 90px;")
+      | 初期費用0円、月額1万円で、
+      br
+      | 政治理念や日々の活動を有権者に発信できる、
+      br
+      | 自分だけのオフィシャルホームページ。
   .grid.row5
     a.btn.is-huge.is-center.is-red.is-red-reverse.js-show.modal-open(href=new_lp_contact_path data-text="どうする？") どうする？
 
