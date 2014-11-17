@@ -29,6 +29,7 @@
 /log
 
 /public/uploads
+/public/assets
 
 # rubymine
 /.idea
