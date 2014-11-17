@@ -12,7 +12,7 @@ gem 'slim-rails'
 gem 'uglifier', '>= 1.3.0'
 
 # css
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 4.0.4'
 gem 'compass-rails'
 gem "font-awesome-rails"
 
