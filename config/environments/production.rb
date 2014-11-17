@@ -82,8 +82,8 @@ Rails.application.configure do
     :address => "skmi.sakura.ne.jp",
     :port => 587,
     :domain => 'sikmi.com',
-    :user_name => "kuruma@sikmi.com",
-    :password => "kuruma123",
+    :user_name => ENV['MAIL_USER'],
+    :password => ENV['MAIL_PASSWORD'],
     :authentication => 'plain',
     :enable_starttls_auto => true
   }
