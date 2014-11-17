@@ -1,10 +1,9 @@
 #RAILS_ROOT = File.expand_path("../../..", __FILE__)
 
 environment   = 'production'
-app_path      = "/var/apps"
-rails_path    = "#{app_path}/current"
-pid_path      = "#{app_path}/shared/tmp/pids"
+rails_path    = File.expand_path("../../..", __FILE__)
 sock_path     = "#{rails_path}/tmp"
+pid_path      = "#{rails_path}/tmp/pids"
 
 FileUtils.mkdir_p(pid_path) unless FileTest.exist?(pid_path)
 FileUtils.mkdir_p(sock_path) unless FileTest.exist?(sock_path)

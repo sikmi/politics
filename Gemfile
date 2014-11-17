@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 # framework
 gem 'rails', '4.1.6'
 gem 'mysql2'
+gem "therubyracer"
 
 # template
 gem 'slim-rails'
