@@ -18,3 +18,4 @@
 //= require turbolinks
 //= require_tree ./bases
 //= require_tree ./modules
+//= require selectivizr-min.js
